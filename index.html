@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Мераб Мамардашвили «Введение в философию» — семинар совместного чтения</title>
-  <meta name="description" content="8 воскресных встреч по «Евгению Онегину»: живое чтение, смысловой разбор, Zoom + запись. Ведущий — Артём Новиченков. Регистрация через форму.">
+  <meta name="description" content="Очный семинар совместного чтения книги Мераба Мамардашвили «Введение в философию». 8 встреч в Москве, группа 8 человек, 2–3 часа каждая встреча.">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='80'>📚</text></svg>">
 
   <style>
@@ -13,21 +13,28 @@
     .container{max-width:1200px;margin:0 auto;padding:0 20px}
 
     /* HERO */
-    .hero-gradient{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:120px 0 80px;text-align:center;position:relative;overflow:hidden}
+    .hero-gradient{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;padding:120px 0 90px;text-align:center;position:relative;overflow:hidden}
     .hero-gradient::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><circle cx="200" cy="200" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="800" cy="300" r="1.5" fill="rgba(255,255,255,0.08)"/><circle cx="600" cy="100" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="100" cy="800" r="1.5" fill="rgba(255,255,255,0.06)"/><circle cx="900" cy="700" r="2" fill="rgba(255,255,255,0.08)"/><circle cx="300" cy="600" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;pointer-events:none}
     .hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto}
     .hero-badge{display:inline-block;background:rgba(255,255,255,.15);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);padding:8px 20px;border-radius:25px;font-size:14px;font-weight:500;margin-bottom:32px;text-transform:uppercase;letter-spacing:.5px}
-    .hero-slogan{font-size:clamp(32px,7vw,64px);font-weight:300;margin-bottom:24px;letter-spacing:-.02em;line-height:1.1}
+    .hero-slogan{font-size:clamp(34px,7vw,66px);font-weight:300;margin-bottom:24px;letter-spacing:-.03em;line-height:1.08}
     .hero-sub{font-size:clamp(18px,3vw,22px);opacity:.95;max-width:700px;margin:0 auto 40px;font-weight:300;line-height:1.5}
-    .hero-stats{display:flex;justify-content:center;gap:40px;margin:40px 0;flex-wrap:wrap}
-    .hero-stat{text-align:center}
-    .hero-stat-number{font-size:28px;font-weight:600;margin-bottom:4px}
+    .hero-stats{display:flex;justify-content:center;gap:42px;margin:42px 0 44px;flex-wrap:wrap}
+    .hero-stat{text-align:center;min-width:100px}
+    .hero-stat-number{font-size:30px;font-weight:600;margin-bottom:4px}
     .hero-stat-label{font-size:14px;opacity:.8;text-transform:uppercase;letter-spacing:.5px}
-    .hero-cta{margin-top:50px}
+    .hero-cta{margin-top:20px}
     .cta-button{display:inline-block;background:#fff;color:#667eea;font-size:18px;padding:20px 40px;border-radius:50px;box-shadow:0 8px 30px rgba(0,0,0,.15);font-weight:600;text-decoration:none;transition:.25s}
     .cta-button:hover{background:#f8f9ff;transform:translateY(-3px);box-shadow:0 15px 40px rgba(0,0,0,.2)}
-    .hero-schedule{font-size:clamp(16px,2.5vw,20px);opacity:.9;margin-top:30px;margin-bottom:40px;font-weight:300;text-align:center}
-    
+    .hero-schedule{font-size:clamp(16px,2.5vw,20px);opacity:.9;margin-top:30px;font-weight:300;text-align:center}
+
+    /* INTRO */
+    .intro-section{padding:100px 0;background:#fff}
+    .intro-text{max-width:860px;margin:0 auto}
+    .intro-text h2{font-size:clamp(30px,4vw,42px);font-weight:600;line-height:1.15;margin-bottom:36px;color:#1d1d1f;letter-spacing:-.02em}
+    .intro-text p{font-size:20px;line-height:1.75;color:#1d1d1f;margin-bottom:26px}
+    .intro-text p:last-child{margin-bottom:0}
+
     /* BENEFITS */
     .benefits-section{padding:100px 0;background:#fff}
     .benefits-header{text-align:center;margin-bottom:60px}
@@ -101,34 +108,8 @@
     .faq-question:hover .faq-toggle{background:#007aff;color:#fff}
     .faq-question.active .faq-toggle{background:#007aff;color:#fff;transform:rotate(180deg)}
 
-    /* ВАЖНО: фикс «подтекания» на мобилке */
-    .faq-answer{
-      max-height:0;
-      padding:0 24px;
-      visibility:hidden;
-      opacity:0;
-      background:#fafafa;
-      overflow:hidden;
-      transition:
-        max-height .4s ease,
-        padding .4s ease,
-        opacity .2s ease,
-        visibility 0s linear .2s;
-      color:#515154;
-      font-size:16px;
-      line-height:1.7;
-    }
-    .faq-answer.active{
-      max-height:600px;
-      padding:24px;
-      visibility:visible;
-      opacity:1;
-      transition:
-        max-height .4s ease,
-        padding .4s ease,
-        opacity .2s ease,
-        visibility 0s;
-    }
+    .faq-answer{max-height:0;padding:0 24px;visibility:hidden;opacity:0;background:#fafafa;overflow:hidden;transition:max-height .4s ease,padding .4s ease,opacity .2s ease,visibility 0s linear .2s;color:#515154;font-size:16px;line-height:1.7}
+    .faq-answer.active{max-height:600px;padding:24px;visibility:visible;opacity:1;transition:max-height .4s ease,padding .4s ease,opacity .2s ease,visibility 0s}
 
     /* FINAL CTA */
     .final-cta{padding:100px 0;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;text-align:center}
@@ -149,17 +130,13 @@
       .container{padding:0 16px}
       .hero-gradient{padding:80px 0 60px}
       .hero-stats{gap:24px}
-      .hero-features{gap:20px}
-      .hero-feature{font-size:14px}
-      .about-section,.benefits-section,.host-section,.program-section,.how-it-works,.faq-section,.final-cta{padding:60px 0}
+      .intro-section,.benefits-section,.host-section,.program-section,.how-it-works,.faq-section,.final-cta{padding:60px 0}
       .benefits-grid,.program-grid,.steps-grid{gap:20px}
       .benefit-card,.program-card{padding:24px}
       .pricing-cards{flex-direction:column;gap:24px}
       .price-card{min-width:auto;width:100%}
       .cta-button{display:block;width:100%;text-align:center;padding:20px}
       .hero-cta .cta-button{width:100%;padding:22px}
-
-      /* host мобильный */
       .host-content{flex-direction:column}
       .guide-photo{order:1;width:100%;max-width:360px;margin:0 auto 16px}
       .host-info{order:2}
@@ -172,58 +149,67 @@
     }
   </style>
 </head>
+
 <body>
 <main>
   <!-- HERO -->
-  <div class="hero-gradient">
+  <section class="hero-gradient">
     <div class="container">
       <div class="hero-content">
         <div class="hero-badge">Москва • очно • группа 8 человек</div>
-        <div class="hero-slogan">Мераб Мамардашвили<br>«Введение в философию»</div>
-        <div class="hero-sub">Семинары совместного чтения</div>
 
-<div class="hero-stats">
-  <div class="hero-stat">
-    <div class="hero-stat-number">8</div>
-    <div class="hero-stat-label">встреч</div>
-  </div>
+        <div class="hero-slogan">
+          Мераб Мамардашвили<br>
+          «Введение в философию»
+        </div>
 
-  <div class="hero-stat">
-    <div class="hero-stat-number">по 2–3</div>
-    <div class="hero-stat-label">часа</div>
-  </div>
+        <div class="hero-sub">Семинар совместного чтения</div>
 
-  <div class="hero-stat">
-    <div class="hero-stat-number">8</div>
-    <div class="hero-stat-label">участников</div>
-  </div>
-</div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="hero-stat-number">8</div>
+            <div class="hero-stat-label">встреч</div>
+          </div>
 
-<div class="hero-cta">
-  <a class="cta-button" target="_blank" rel="noopener" href="https://forms.gle/pUeG19yCMmEKxLMw8">
-    Подать заявку →
-  </a>
+          <div class="hero-stat">
+            <div class="hero-stat-number">2–3</div>
+            <div class="hero-stat-label">часа</div>
+          </div>
 
-  <p class="hero-schedule">
-    Москва · 8, 18 и 28 числа месяца · 2–3 часа
-  </p>
-</div>
+          <div class="hero-stat">
+            <div class="hero-stat-number">8</div>
+            <div class="hero-stat-label">участников</div>
+          </div>
+        </div>
 
-<!-- WHY MAMARDASHVILI -->
-<section class="host-section">
-  <div class="container">
-    <div class="host-info" style="max-width:860px;margin:0 auto;">
-      <h2>Почему именно Мамардашвили?</h2>
+        <div class="hero-cta">
+          <a class="cta-button" target="_blank" rel="noopener" href="https://forms.gle/pUeG19yCMmEKxLMw8">
+            Подать заявку →
+          </a>
 
-      <p>Мераб Мамардашвили помог мне родиться второй раз. Восемь лет назад я открыл его книгу, и моя жизнь преобразилась. Тогда я обрёл новую почву под ногами. Этой почвой оказалось мышление.</p>
-
-      <p>Лекции Мамардашвили — удивительная возможность присутствовать при рождении мысли. Кажется, что философствование происходит прямо сейчас, а читатель становится его свидетелем.</p>
-
-      <p>Я предлагаю вам вместе читать и обсуждать лекции из курса «Введение в философию», постепенно входя в мысль Мамардашвили. Мне хочется создать пространство, в котором философия станет событием, а не предметом изучения. Не знаю, что принесут эти встречи каждому из нас. Но однажды именно встреча с Мерабом стала для меня началом новой жизни.</p>
+          <p class="hero-schedule">
+            8, 18 и 28 числа каждого месяца · Москва · 2–3 часа
+          </p>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="container">
+      <div class="intro-text">
+        <h2>Почему именно Мамардашвили?</h2>
+
+        <p>Мераб Мамардашвили помог мне родиться второй раз. Восемь лет назад я открыл его книгу, и моя жизнь преобразилась. Тогда я обрёл новую почву под ногами. Этой почвой оказалось мышление.</p>
+
+        <p>Лекции Мамардашвили — удивительная возможность присутствовать при рождении мысли. Кажется, что философствование происходит прямо сейчас, а читатель становится его свидетелем.</p>
+
+        <p>Я предлагаю вам вместе читать и обсуждать лекции из курса «Введение в философию», постепенно входя в мысль Мамардашвили. Мне хочется создать пространство, в котором философия станет событием, а не предметом изучения. Не знаю, что принесут эти встречи каждому из нас. Но однажды именно встреча с Мерабом стала для меня началом новой жизни.</p>
+      </div>
+    </div>
+  </section>
+  
   <!-- HOST -->
   <section class="host-section">
     <div class="container">
